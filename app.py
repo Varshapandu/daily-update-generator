@@ -590,38 +590,38 @@ st.markdown("""
            DESIGN TOKENS & VARIABLES
            ============================================ */
         :root {
-            /* Color Palette */
-            --color-primary: #4F46E5;
-            --color-primary-light: #EEF2FF;
-            --color-primary-dark: #312E81;
-            --color-secondary: #8B5CF6;
-            --color-success: #10B981;
-            --color-success-light: #D1FAE5;
-            --color-warning: #D97706;
-            --color-warning-light: #FEF3C7;
-            --color-danger: #DC2626;
+            /* Color Palette - Soft Pastel */
+            --color-primary: #A78BFA;
+            --color-primary-light: #F3E8FF;
+            --color-primary-dark: #7C3AED;
+            --color-secondary: #C4B5FD;
+            --color-success: #86EFAC;
+            --color-success-light: #DCFCE7;
+            --color-warning: #FCD34D;
+            --color-warning-light: #FEF9E7;
+            --color-danger: #FCA5A5;
             --color-danger-light: #FEE2E2;
-            --color-info: #06B6D4;
-            --color-info-light: #CFFAFE;
+            --color-info: #A5F3FC;
+            --color-info-light: #ECFDF5;
             
             /* Neutral Palette */
             --color-white: #FFFFFF;
-            --color-gray-50: #F9FAFB;
-            --color-gray-100: #F3F4F6;
-            --color-gray-200: #E5E7EB;
-            --color-gray-300: #D1D5DB;
-            --color-gray-400: #9CA3AF;
-            --color-gray-500: #6B7280;
-            --color-gray-600: #4B5563;
-            --color-gray-700: #374151;
-            --color-gray-800: #1F2937;
-            --color-gray-900: #111827;
+            --color-gray-50: #FFFBF0;
+            --color-gray-100: #FAF8F3;
+            --color-gray-200: #F3F1EB;
+            --color-gray-300: #E8E3D8;
+            --color-gray-400: #D4CCC0;
+            --color-gray-500: #B8AFA0;
+            --color-gray-600: #8B8680;
+            --color-gray-700: #5F5952;
+            --color-gray-800: #3F3936;
+            --color-gray-900: #2A2724;
             
             /* Semantic Colors */
-            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg-primary: linear-gradient(135deg, #C7D2FE 0%, #DDD6FE 100%);
+            --bg-secondary: linear-gradient(135deg, #FBCFE8 0%, #FECACA 100%);
             --bg-surface: #FFFFFF;
-            --bg-surface-alt: #F9FAFB;
+            --bg-surface-alt: #FFFBF0;
             --bg-overlay: rgba(0, 0, 0, 0.5);
             
             /* Typography */
@@ -664,10 +664,10 @@ st.markdown("""
             
             /* Shadows */
             --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
             
             /* Transitions */
             --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -708,7 +708,7 @@ st.markdown("""
         [data-testid="stMarkdownContainer"] h4,
         [data-testid="stMarkdownContainer"] h5,
         [data-testid="stMarkdownContainer"] h6 {
-            color: #1a202c !important;
+            color: #5F5952 !important;
             font-weight: 700 !important;
         }
         
@@ -718,32 +718,32 @@ st.markdown("""
         h1, h2, h3, h4, h5, h6 {
             font-weight: var(--font-weight-bold);
             line-height: var(--font-line-height-tight);
-            color: var(--color-gray-900);
+            color: #5F5952;
             margin-top: var(--spacing-8);
         }
         
         h1 {
             font-size: var(--font-size-3xl);
             margin-bottom: var(--spacing-8);
-            color: #1a202c;
+            color: #5F5952;
         }
         
         h2 {
             font-size: var(--font-size-2xl);
             margin-bottom: var(--spacing-6);
-            color: #1a202c;
+            color: #5F5952;
         }
         
         h3 {
             font-size: var(--font-size-xl);
             margin-bottom: var(--spacing-4);
-            color: #1a202c;
+            color: #5F5952;
             font-weight: 700;
         }
         
         h4, h5, h6 {
             font-size: var(--font-size-lg);
-            color: #1a202c;
+            color: #5F5952;
         }
         
         p {
@@ -765,27 +765,30 @@ st.markdown("""
         /* ============================================
            BUTTONS
            ============================================ */
-        .stButton > button {
-            background: var(--color-primary);
-            color: var(--color-white);
-            border: none;
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-3) var(--spacing-6);
-            font-size: var(--font-size-base);
-            font-weight: var(--font-weight-semibold);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            box-shadow: var(--shadow-sm);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-2);
+        .stButton > button,
+        [data-testid="stDownloadButton"] > button {
+            background: #D4E9F7 !important;
+            color: #1B5E7E !important;
+            border: 1px solid #A5D3E8 !important;
+            border-radius: var(--radius-lg) !important;
+            padding: var(--spacing-3) var(--spacing-6) !important;
+            font-size: var(--font-size-base) !important;
+            font-weight: var(--font-weight-semibold) !important;
+            cursor: pointer !important;
+            transition: all var(--transition-base) !important;
+            box-shadow: var(--shadow-sm) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: var(--spacing-2) !important;
+            width: 100% !important;
         }
         
-        .stButton > button:hover {
-            background: var(--color-primary-dark);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-1px);
+        .stButton > button:hover,
+        [data-testid="stDownloadButton"] > button:hover {
+            background: #B5D9E8 !important;
+            box-shadow: var(--shadow-lg) !important;
+            transform: translateY(-1px) !important;
         }
         
         .stButton > button:active {
@@ -831,15 +834,59 @@ st.markdown("""
             color: var(--color-gray-400);
         }
         
-        /* Multiselect tags */
+        /* Multiselect container - light grey background */
+        [data-baseweb="base-select"],
+        [data-baseweb="popover"],
+        .stMultiSelect [data-baseweb="base-select"] {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Multiselect search input */
+        [data-baseweb="input"] {
+            background-color: #FAF8F3 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Multiselect container background */
+        div[data-baseweb="select"] {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Multiselect wrapper - light background */
+        [class*="stMultiSelect"] {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Multiselect input container */
+        [data-baseweb="select"] > div {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* All text inside multiselect - dark and readable */
         [data-baseweb="tag"] {
-            background-color: #6366F1 !important;
-            color: white !important;
+            background-color: #C7D2FE !important;
+            color: #5F5952 !important;
             border-radius: 6px !important;
         }
         
         [data-baseweb="tag"] > span {
-            color: white !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Text labels and option text inside selects */
+        [data-baseweb="select"] span,
+        [data-baseweb="base-select"] span,
+        [data-baseweb="base-select"] div {
+            color: #5F5952 !important;
+        }
+        
+        /* Option items text */
+        [role="option"] {
+            color: #5F5952 !important;
+        }
+        
+        [role="option"]:hover {
+            background-color: #E8E3D8 !important;
         }
         
         /* ============================================
@@ -894,6 +941,14 @@ st.markdown("""
             color: var(--color-gray-700);
         }
         
+        /* ETA / Date columns - darker and more prominent */
+        .stDataFrame td:nth-child(4),
+        [data-testid="stDataFrame"] td:nth-child(4) {
+            color: #3F3936 !important;
+            font-weight: 600 !important;
+            background-color: #FFFBF0 !important;
+        }
+        
         .stDataFrame tr:hover,
         [data-testid="stDataFrame"] tr:hover {
             background-color: var(--color-gray-50);
@@ -910,32 +965,179 @@ st.markdown("""
         }
         
         [data-testid="stAlert"][kind="success"] {
-            background-color: var(--color-success-light);
-            border-left-color: var(--color-success);
-            color: #065F46;
+            background-color: #DCFCE7;
+            border-left-color: #86EFAC;
+            color: #166534;
         }
         
         [data-testid="stAlert"][kind="warning"] {
-            background-color: var(--color-warning-light);
-            border-left-color: var(--color-warning);
+            background-color: #FEF9E7;
+            border-left-color: #FCD34D;
             color: #78350F;
         }
         
         [data-testid="stAlert"][kind="error"] {
-            background-color: var(--color-danger-light);
-            border-left-color: var(--color-danger);
+            background-color: #FEE2E2;
+            border-left-color: #FCA5A5;
             color: #7F1D1D;
         }
         
         [data-testid="stAlert"][kind="info"] {
-            background-color: var(--color-info-light);
-            border-left-color: var(--color-info);
+            background-color: #ECFDF5;
+            border-left-color: #A5F3FC;
             color: #164E63;
         }
         
         /* ============================================
-           DIVIDERS
+           DATE PICKER
            ============================================ */
+        /* Date picker input */
+        input[type="date"],
+        [data-baseweb="datepicker"] input {
+            background-color: #FFFFFF !important;
+            color: #5F5952 !important;
+            border: 1px solid #D4CCC0 !important;
+            border-radius: var(--radius-lg) !important;
+            padding: var(--spacing-2) var(--spacing-4) !important;
+        }
+        
+        /* Calendar popup wrapper */
+        [data-baseweb="datepicker"] {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Popover (calendar container) */
+        [data-baseweb="popover"],
+        div[role="dialog"],
+        [class*="Popover"] {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Calendar root */
+        [class*="Calendar"],
+        [class*="react-day-picker"],
+        .DayPicker {
+            background-color: #FAF8F3 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Calendar wrapper div */
+        [data-baseweb="datepicker"] div,
+        [class*="Calendar__Root"] {
+            background-color: #FAF8F3 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Header (month/year) */
+        [class*="Calendar__Header"],
+        [class*="Header"],
+        thead {
+            background-color: #E8E3D8 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Month/Year text */
+        [class*="Calendar__Title"],
+        [class*="Title"] {
+            color: #5F5952 !important;
+        }
+        
+        /* Calendar body */
+        [class*="Calendar__Body"],
+        tbody {
+            background-color: #FAF8F3 !important;
+        }
+        
+        /* Day cells */
+        [class*="Day"],
+        [class*="day"],
+        td button,
+        td div,
+        button[class*="Day"] {
+            background-color: #FFFFFF !important;
+            color: #5F5952 !important;
+            border: 1px solid #F3E8FF !important;
+        }
+        
+        /* Day hover */
+        [class*="Day"]:hover,
+        td button:hover,
+        button[class*="Day"]:hover {
+            background-color: #E8E3D8 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Selected date */
+        [class*="Day"][class*="selected"],
+        [class*="Day"][class*="highlighted"],
+        [class*="Day"][aria-selected="true"],
+        button[class*="Day"][aria-selected="true"],
+        td button[aria-selected="true"] {
+            background-color: #A78BFA !important;
+            color: #FFFFFF !important;
+            border-color: #A78BFA !important;
+        }
+        
+        /* Disabled days */
+        [class*="Day"][disabled],
+        button[class*="Day"][disabled] {
+            background-color: #F3E8FF !important;
+            color: #D4CCC0 !important;
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
+        
+        /* Weekday headers */
+        th {
+            background-color: #E8E3D8 !important;
+            color: #8B8680 !important;
+            font-weight: 600 !important;
+            padding: 8px !important;
+        }
+        
+        /* Today indicator */
+        [class*="Today"] {
+            border: 2px solid #A78BFA !important;
+        }
+        
+        /* Navigation buttons */
+        button[aria-label*="previous"],
+        button[aria-label*="next"],
+        [class*="Navigation"] button {
+            background-color: #E8E3D8 !important;
+            color: #5F5952 !important;
+            border: 1px solid #D4CCC0 !important;
+            border-radius: var(--radius-md) !important;
+        }
+        
+        button[aria-label*="previous"]:hover,
+        button[aria-label*="next"]:hover,
+        [class*="Navigation"] button:hover {
+            background-color: #D4CCC0 !important;
+        }
+        
+        /* Ensure all elements inside calendar are visible */
+        [data-baseweb="datepicker"] * {
+            background-color: inherit !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Date styling - darker and more prominent */
+        /* Timeline and card dates */
+        .date-label,
+        [class*="date"],
+        span:has(+ *):contains("/") {
+            color: #2A2724 !important;
+            font-weight: 700 !important;
+            font-size: 1.05rem !important;
+        }
+        
+        /* All date text in metrics and cards */
+        [data-testid="stMetric"] div,
+        .metric-card span {
+            /* Inherited styles for dates */
+        }
+        
         hr {
             border: none;
             height: 1px;
@@ -944,8 +1146,19 @@ st.markdown("""
         }
         
         /* ============================================
-           SIDEBAR
+           LAYOUT & SPACING
            ============================================ */
+        [data-testid="column"] {
+            display: flex !important;
+            align-items: center !important;
+        }
+        
+        /* Column container alignment */
+        .stColumns,
+        [data-testid="stColumns"] {
+            gap: 1rem !important;
+            align-items: stretch !important;
+        }
         [data-testid="stSidebar"] {
             background-color: var(--color-white);
             border-right: 1px solid var(--color-gray-200);
@@ -978,6 +1191,73 @@ st.markdown("""
         }
         
         /* ============================================
+           CALENDAR HARDFIX (AGGRESSIVE OVERRIDE)
+           ============================================ */
+        /* Entire calendar dropdown */
+        [role="dialog"],
+        [data-testid="stDateInput"] [role="dialog"],
+        .calendar-popup {
+            background: linear-gradient(135deg, #FFFBF0, #FAF8F3) !important;
+            border: 2px solid #D4CCC0 !important;
+        }
+        
+        /* Everything in calendar */
+        [role="dialog"] * {
+            background-color: transparent !important;
+        }
+        
+        /* Calendar main container with dark background */
+        div[style*="background"] {
+            background-color: #FAF8F3 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* Specifically target dark containers */
+        div[style*="rgb(45, 45, 45)"],
+        div[style*="rgb(29, 29, 29)"],
+        div[style*="#2d2d2d"],
+        div[style*="#1d1d1d"] {
+            background-color: #FAF8F3 !important;
+            color: #5F5952 !important;
+        }
+        
+        /* All buttons in calendar */
+        [role="dialog"] button {
+            background-color: #FFFFFF !important;
+            color: #5F5952 !important;
+            border: 1px solid #D4CCC0 !important;
+            padding: 8px 12px !important;
+            border-radius: 6px !important;
+        }
+        
+        [role="dialog"] button:hover,
+        [role="dialog"] button:focus {
+            background-color: #E8E3D8 !important;
+            border-color: #A78BFA !important;
+        }
+        
+        /* Selected button */
+        [role="dialog"] button[aria-selected="true"],
+        [role="dialog"] button:selected {
+            background-color: #A78BFA !important;
+            color: #FFFFFF !important;
+            border-color: #A78BFA !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Month/Year header text */
+        [role="dialog"] h2,
+        [role="dialog"] [role="heading"] {
+            color: #5F5952 !important;
+            background-color: transparent !important;
+        }
+        
+        /* All spans and text */
+        [role="dialog"] span {
+            color: #5F5952 !important;
+        }
+        
+        /* ============================================
            ACCESSIBILITY
            ============================================ */
         *:focus-visible {
@@ -999,21 +1279,21 @@ st.title("📊 Daily Update Generator")
 # Add intro section
 st.markdown("""
     <div style="
-        background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
-        border-left: 4px solid var(--color-primary);
+        background: linear-gradient(135deg, rgba(199, 210, 254, 0.4) 0%, rgba(221, 214, 254, 0.4) 100%);
+        border-left: 4px solid #A78BFA;
         padding: 24px;
         border-radius: 12px;
         margin-bottom: 32px;
-        border: 1px solid rgba(79, 70, 229, 0.15);
+        border: 1px solid rgba(199, 210, 254, 0.6);
     ">
-        <h3 style="margin-top: 0; color: var(--color-gray-900); font-size: 18px; font-weight: 600;">✨ Welcome to Your Daily Update Dashboard</h3>
-        <p style="color: var(--color-gray-700); margin: 12px 0; font-size: 15px; line-height: 1.6;">
+        <h3 style="margin-top: 0; color: #5F5952; font-size: 18px; font-weight: 600;">✨ Welcome to Your Daily Update Dashboard</h3>
+        <p style="color: #8B8680; margin: 12px 0; font-size: 15px; line-height: 1.6;">
             <span style="font-weight: 500;">🔗 Connect</span> your Google Sheet → 
             <span style="font-weight: 500;">✏️ Edit</span> your tasks → 
             <span style="font-weight: 500;">💾 Save</span> snapshots → 
             <span style="font-weight: 500;">📊 Visualize</span> your timeline
         </p>
-        <p style="color: var(--color-gray-600); margin: 0; font-size: 14px; line-height: 1.5;">
+        <p style="color: #A8A0A0; margin: 0; font-size: 14px; line-height: 1.5;">
             Keep your team aligned with real-time task tracking and status updates.
         </p>
     </div>
@@ -1286,6 +1566,53 @@ def save_master_sheet(sheet_url, df):
     )
 
 # ==========================================================
+# CREATE NEW GOOGLE SHEET
+# ==========================================================
+
+def create_new_sheet(df, sheet_name=None):
+    """Creates a new Google Sheet with the dataframe content"""
+    gc = get_gspread_client()
+    
+    if sheet_name is None:
+        # Generate sheet name with timestamp
+        from datetime import datetime
+        sheet_name = f"Daily Update - {datetime.now().strftime('%d-%m-%Y %H:%M')}"
+    
+    # Create new spreadsheet
+    sh = gc.create(sheet_name)
+    ws = sh.sheet1
+    
+    df_to_save = df.copy()
+
+    # Move Snapshot Date to first column if it exists, otherwise add it
+    if "Snapshot Date" in df_to_save.columns:
+        cols = df_to_save.columns.tolist()
+        cols.remove("Snapshot Date")
+        df_to_save = df_to_save[["Snapshot Date"] + cols]
+        df_to_save["Snapshot Date"] = df_to_save["Snapshot Date"].apply(
+            lambda x: pd.to_datetime(x).strftime("%d/%m/%Y") if pd.notnull(x) else ""
+        )
+    else:
+        df_to_save.insert(0, "Snapshot Date", datetime.today().strftime("%d/%m/%Y"))
+    
+    # Format ETA column if it exists
+    if "ETA / Follow-up" in df_to_save.columns:
+        df_to_save["ETA / Follow-up"] = df_to_save["ETA / Follow-up"].apply(
+            lambda x: pd.to_datetime(x).strftime("%d/%m/%Y") if pd.notnull(x) else ""
+        )
+
+    # Update the new sheet with data
+    ws.update(
+        [df_to_save.columns.tolist()] +
+        df_to_save.fillna("").astype(str).values.tolist()
+    )
+    
+    # Share with user (optional - set to "anyone with the link" can view)
+    sh.share('', perm_type='anyone', role='reader')
+    
+    return sh.url
+
+# ==========================================================
 # SESSION
 # ==========================================================
 
@@ -1355,7 +1682,6 @@ else:
                     st.session_state.master_df = load_master_sheet(sheet_url)
                     st.session_state.sheet_url = sheet_url
                 st.success("✅ Connected successfully!")
-                st.balloons()
             except Exception as e:
                 error_msg = str(e)
                 st.error("❌ Connection failed!")
@@ -1407,53 +1733,55 @@ if st.session_state.master_df is not None:
     )
 
     # Save and control buttons
+    st.markdown("---")
+    st.markdown("""
+    **💡 New Workflow:** Load data from your Google Sheet → Edit tasks below → Click Save to create a NEW Google Sheet with your edited data.
+    No permission issues, and you keep the original sheet intact!
+    """)
+    
     col1, col2, col3 = st.columns([2, 2, 1])
     
+    # Snapshot date picker
+    st.markdown("**📅 Select Snapshot Date**")
+    snapshot_date = st.date_input(
+        "Choose date for this snapshot",
+        value=datetime.today().date(),
+        key="snapshot_date_picker"
+    )
+    
     with col1:
-        if st.button("💾 Save Today Snapshot", use_container_width=True):
+        if st.button("💾 Save Snapshot", use_container_width=True):
 
             if edited_df.empty:
                 st.warning("⚠️ Nothing to save.")
-            elif not st.session_state.sheet_url:
-                st.error("❌ No sheet connected! Please connect a Google Sheet first.")
             else:
                 try:
-                    with st.spinner("Saving snapshot..."):
-                        today_date = pd.to_datetime(datetime.today().date())
+                    with st.spinner("Creating new Google Sheet..."):
+                        # Use selected date instead of today
+                        selected_date = pd.to_datetime(snapshot_date)
 
                         # Inject snapshot date
-                        edited_df["Snapshot Date"] = today_date
+                        edited_df["Snapshot Date"] = selected_date
 
-                        # Update session state (VERY IMPORTANT)
+                        # Update session state
                         st.session_state.master_df = edited_df
 
-                        # Save to sheet using stored URL
-                        save_master_sheet(st.session_state.sheet_url, edited_df)
+                        # Create NEW Google Sheet instead of updating
+                        new_sheet_url = create_new_sheet(
+                            edited_df, 
+                            f"Daily Update - {selected_date.strftime('%d-%m-%Y')}"
+                        )
 
-                    st.success(f"✅ Snapshot saved for {today_date.strftime('%d/%m/%Y')}")
-                    st.balloons()
-                    st.rerun()
+                    st.success(f"✅ New sheet created for {selected_date.strftime('%d/%m/%Y')}")
+                    st.markdown(f"**📊 New Sheet URL:** [Open Sheet]({new_sheet_url})")
+                    
                 except Exception as e:
                     error_msg = str(e)
-                    if "403" in error_msg or "permission" in error_msg.lower():
-                        st.error("❌ Permission Denied!")
-                        st.warning("""
-                        **How to fix:**
-                        
-                        1. Open your Google Sheet
-                        2. Click the **Share** button (top right)
-                        3. Add this email with **Editor** permissions:
-                           
-                           `daily-update-app@civil-array-412203.iam.gserviceaccount.com`
-                        
-                        4. Click Share and come back here
-                        5. Try saving again
-                        """)
-                    elif "not found" in error_msg.lower() or "404" in error_msg:
-                        st.error("❌ Sheet Not Found!")
-                        st.warning("The Google Sheet URL might be invalid or the sheet has been deleted.")
+                    st.error(f"❌ Failed to create sheet: {error_msg}")
+                    if "quota" in error_msg.lower():
+                        st.warning("You've reached your Google Drive quota. Please delete some files and try again.")
                     else:
-                        st.error(f"Failed to save: {error_msg}")
+                        st.info("Make sure you have Google authentication set up correctly.")
 
     st.session_state.master_df = edited_df
 
@@ -1514,19 +1842,18 @@ if st.session_state.master_df is not None:
         
         # Date Filter
         with filter_col3:
-            min_date = df["Snapshot Date"].min()
-            max_date = df["Snapshot Date"].max()
+            # Get min/max ETA dates for the filter range
+            eta_dates = pd.to_datetime(df["ETA / Follow-up"], errors='coerce')
+            min_eta = eta_dates.min().date()
+            max_eta = eta_dates.max().date()
+            
             date_range = st.date_input(
-                "📅 Filter by Date Range",
-                value=(min_date, max_date),
-                min_value=min_date,
-                max_value=max_date,
+                "📅 Filter by ETA Date",
+                value=(min_eta, max_eta),
+                min_value=min_eta,
+                max_value=max_eta,
                 key="date_filter"
             )
-            if isinstance(date_range, tuple) and len(date_range) == 2:
-                start_date, end_date = date_range
-            else:
-                start_date = end_date = date_range
 
         # Apply filters
         # Status filter - exact match
@@ -1540,8 +1867,22 @@ if st.session_state.master_df is not None:
         else:
             owner_mask = pd.Series([True] * len(df))
         
-        # Date filter - range
-        date_mask = (df["Snapshot Date"].dt.date >= start_date) & (df["Snapshot Date"].dt.date <= end_date)
+        # Date filter - by ETA / Follow-up dates
+        try:
+            if isinstance(date_range, (tuple, list)):
+                start_date = date_range[0]
+                end_date = date_range[1]
+            else:
+                start_date = end_date = date_range
+            
+            # Convert ETA / Follow-up to dates for comparison
+            df_eta_dates = pd.to_datetime(df["ETA / Follow-up"], errors='coerce').dt.date
+            
+            # Compare using boolean mask
+            date_mask = (df_eta_dates >= start_date) & (df_eta_dates <= end_date)
+        except Exception as e:
+            st.error(f"Date filter error: {str(e)}")
+            date_mask = pd.Series([True] * len(df))
         
         filtered_df = df[status_mask & owner_mask & date_mask]
 
@@ -1598,46 +1939,46 @@ if st.session_state.master_df is not None:
                     align-items: center;
                     gap: 12px;
                     padding: 16px;
-                    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
-                    border-left: 4px solid;
+                    background: linear-gradient(135deg, rgba(199, 210, 254, 0.3) 0%, rgba(221, 214, 254, 0.3) 100%);
+                    border-left: 4px solid #A78BFA;
                     border-radius: 8px;
                     margin-bottom: 16px;
-                    border: 1px solid rgba(79, 70, 229, 0.15);
+                    border: 1px solid rgba(199, 210, 254, 0.5);
                     font-weight: 600;
-                    color: var(--color-gray-900);
+                    color: #5F5952;
                 }
                 
                 .task-table {
                     width: 100%;
                     border-collapse: collapse;
                     background: var(--color-white);
-                    border: 1px solid var(--color-gray-200);
+                    border: 1px solid #F3E8FF;
                     border-radius: 8px;
                     overflow: hidden;
                     margin-bottom: 20px;
-                    box-shadow: var(--shadow-sm);
+                    box-shadow: 0 1px 3px 0 rgba(167, 139, 250, 0.1);
                 }
                 
                 .task-table th {
-                    background: var(--color-gray-100);
-                    color: var(--color-gray-900);
+                    background: #F3E8FF;
+                    color: #5F5952;
                     padding: 12px 16px;
                     text-align: left;
                     font-weight: 600;
                     font-size: 13px;
-                    border-bottom: 2px solid var(--color-gray-300);
+                    border-bottom: 2px solid #C7D2FE;
                     letter-spacing: 0.5px;
                 }
                 
                 .task-table td {
                     padding: 12px 16px;
-                    border-bottom: 1px solid var(--color-gray-100);
-                    color: var(--color-gray-700);
+                    border-bottom: 1px solid #F3E8FF;
+                    color: #5F5952;
                     font-size: 13px;
                 }
                 
                 .task-table tbody tr:hover {
-                    background: var(--color-gray-50);
+                    background: #FFFBF0;
                     transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
                 }
                 
@@ -1647,17 +1988,17 @@ if st.session_state.master_df is not None:
                 
                 .task-name {
                     font-weight: 500;
-                    color: var(--color-primary);
+                    color: #A78BFA;
                 }
                 
                 .owner-cell {
                     font-size: 12px;
-                    color: var(--color-gray-600);
+                    color: #8B8680;
                 }
                 
                 .notes-cell {
                     font-size: 12px;
-                    color: var(--color-gray-500);
+                    color: #A8A0A0;
                     font-style: italic;
                 }
             </style>
@@ -1739,7 +2080,7 @@ if st.session_state.master_df is not None:
     st.markdown("---")
     st.markdown("### ⬇️ Export & Download")
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([0.5, 1], gap="medium")
     
     csv = st.session_state.master_df.to_csv(index=False)
 
@@ -1753,6 +2094,4 @@ if st.session_state.master_df is not None:
         )
     
     with col2:
-        st.markdown("")
-        st.markdown("")
         st.info("💾 Export your tasks for backup or sharing", icon="📋")

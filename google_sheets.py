@@ -86,3 +86,70 @@ def save_sheet(sheet_url: str, df: pd.DataFrame):
     ws.update(
         [df.columns.tolist()] + df.astype(str).values.tolist()
     )
+
+
+# =====================================================
+# FORMAT ETA COLUMN WITH DARKER COLOR
+# =====================================================
+
+def format_eta_column(sheet_url: str):
+    """
+    Apply darker background color to ETA/Follow-up column in Google Sheet
+    """
+    gc = get_gspread_client()
+    sh = gc.open_by_url(sheet_url)
+    ws = sh.sheet1
+
+    # Get header row to find ETA column
+    headers = ws.row_values(1)
+    
+    eta_col_index = None
+    for idx, header in enumerate(headers):
+        if "ETA" in header or "Follow-up" in header:
+            eta_col_index = idx + 1  # gspread uses 1-indexed columns
+            break
+    
+    if eta_col_index is None:
+        raise Exception("Could not find ETA column")
+    
+    # Get the number of rows with data
+    all_values = ws.get_all_values()
+    num_rows = len(all_values)
+    
+    # Build the range for the entire ETA column (excluding header)
+    col_letter = chr(64 + eta_col_index)  # Convert 1-indexed column to letter
+    range_to_format = f"{col_letter}2:{col_letter}{num_rows}"
+    
+    # Format the entire ETA column with darker blue background
+    requests = [
+        {
+            "repeatCell": {
+                "range": {
+                    "sheetId": ws.id,
+                    "startRowIndex": 1,  # Start from row 2 (skip header)
+                    "startColumnIndex": eta_col_index - 1,
+                    "endColumnIndex": eta_col_index
+                },
+                "cell": {
+                    "userEnteredFormat": {
+                        "backgroundColor": {
+                            "red": 0.25,
+                            "green": 0.45,
+                            "blue": 0.85
+                        },
+                        "textFormat": {
+                            "bold": True,
+                            "foregroundColor": {
+                                "red": 1.0,
+                                "green": 1.0,
+                                "blue": 1.0
+                            }
+                        }
+                    }
+                },
+                "fields": "userEnteredFormat"
+            }
+        }
+    ]
+    
+    sh.batch_update({"requests": requests})

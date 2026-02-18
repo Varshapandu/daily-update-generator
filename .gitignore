@@ -1,0 +1,23 @@
+# Virtual environment
+Daily/
+.env
+
+# Google credentials
+oauth_credentials.json
+token.pickle
+service_account.json
+
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

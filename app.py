@@ -1641,28 +1641,28 @@ if "auth_client" not in st.session_state:
 if "auth_status" not in st.session_state:
     st.session_state.auth_status = False
 
-# Show login button if not authenticated
+# Show auth button if not authorized
 if not st.session_state.auth_status:
     st.info("""
-    **Step 1: Authenticate with Google**
-    
-    Click the button below to log in with your Google account.
-    You'll only need to do this once - your authentication will be saved.
-    """, icon="🔐")
-    
-    if st.button("🔑 Login with Google", use_container_width=True, key="login_btn"):
+    **Step 1: Authorize Google Sheets access**
+
+    In Streamlit Cloud, this uses your configured service account secrets.
+    In local development, this may open Google OAuth in your browser.
+    """)
+
+    if st.button("Authorize Google Access", use_container_width=True, key="login_btn"):
         try:
-            with st.spinner("Authenticating with Google..."):
+            with st.spinner("Authorizing Google access..."):
                 from google_auth import get_gspread_client
                 st.session_state.auth_client = get_gspread_client()
                 st.session_state.auth_status = True
-            st.success("✅ Authenticated successfully!")
+            st.success("Access authorized successfully")
             st.rerun()
         except Exception as e:
-            st.error(f"❌ Authentication failed: {str(e)}")
+            st.error(f"Authentication failed: {str(e)}")
 else:
-    st.success("✅ Logged in with Google")
-    
+    st.success("Google access authorized")
+
     st.markdown("**Step 2: Connect your Google Sheet**")
     
     col1, col2 = st.columns([4, 1])
@@ -1671,7 +1671,7 @@ else:
     with col2:
         st.write("")
         st.write("")
-        connect_btn = st.button("📤 Connect", use_container_width=True)
+        connect_btn = st.button("Connect", use_container_width=True)
 
     if connect_btn:
         if not sheet_url:
@@ -1692,20 +1692,20 @@ else:
                     Make sure:
                     1. You own this Google Sheet or have access to it
                     2. The sheet ID in the URL is correct
-                    3. Try logging out and back in if issues persist
+                    3. If using service account auth, share the sheet with that service account email
                     """)
                 elif "not found" in error_msg.lower() or "404" in error_msg:
                     st.error("Sheet URL not found or is invalid. Please check the URL and try again.")
                 else:
                     st.error(f"Error: {error_msg}")
     
-    # Logout button
-    if st.button("🚪 Logout", use_container_width=False):
+    # Reset auth button
+    if st.button("Reset Google Access", use_container_width=False):
         st.session_state.auth_client = None
         st.session_state.auth_status = False
         st.session_state.master_df = None
         st.session_state.sheet_url = None
-        st.success("Logged out successfully")
+        st.success("Google access reset successfully")
         st.rerun()
 
 # ==========================================================
@@ -2095,3 +2095,4 @@ if st.session_state.master_df is not None:
     
     with col2:
         st.info("💾 Export your tasks for backup or sharing", icon="📋")
+

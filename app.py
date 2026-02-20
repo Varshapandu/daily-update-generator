@@ -1633,6 +1633,7 @@ if "auth_status" not in st.session_state:
 # ==========================================================
 
 st.markdown("### 🔗 Connect Google Sheet")
+st.caption("Auth runtime: v2.1 (service-account first)")
 
 # Initialize authentication state
 if "auth_client" not in st.session_state:
